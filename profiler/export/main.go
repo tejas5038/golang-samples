@@ -101,7 +101,7 @@ func downloadProfiles(ctx context.Context, w io.Writer, project, pageToken strin
 		}
 		fmt.Fprintf(w, "deployment target: %v\n", profile.Deployment.Labels)
 
-		labelBytes, err := json.Marshal(profile.Labels)
+		labelBytes, err := json.Marshal(profile.Deployment.Labels)
 		if err != nil {
 			return err
 		}
